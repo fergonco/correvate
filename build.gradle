@@ -5,8 +5,14 @@ plugins {
 }
 
 group = 'org.fergonco'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 sourceCompatibility = '11'
+
+bootJar {
+    // Avoid ahving the version in the jar name to let the dockerbuild pick the
+    // file without knowing the version
+   archiveName = 'zipper.jar'
+}
 
 configurations {
 	compileOnly {
